@@ -2,40 +2,35 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Card } from '../../components/Card'
 import { Footer } from '../../components/Footer'
-import { Menu } from './../../components/Menu'
-import banner from './../../imagens/banner.jpg'
+import { Header } from '../../components/Header'
 import './style.css'
 
 export const Home = () => {
 
-    const [cards, setCards] = useState([])
+    const [cards, setCards] = useState([]);
+    const [page, setPage] = useState('');
+    const [prevPage, setPrevPage] = useState('');
+    const [nextPage, setNextPage] = useState('');
 
     useEffect(() => {
 
-        axios.get('https://rickandmortyapi.com/api/character')
-            .then((resposta) => {                
-                setCards(resposta.data.results)
+        axios.get(page ? page : 'https://rickandmortyapi.com/api/character')
+            .then(({ data }) => {    
+                setPrevPage(data.info.prev);
+                setNextPage(data.info.next); 
+                setCards(data.results)
             })
 
-    }, [])
+    }, [page])
 
     return (
         <>
-            <Menu paginaAtual={"Home"} />
-            <div
-                className='divImageHome'
-            >
-                <img
-                    className='imgHome'
-                    src={banner}
-                />
-            </div>
+            <Header />
 
             <div
-                className='container'
+                className='container mb-5'
             >
-                <h4 className='text-center'>Porque nos escolher?</h4>
-                <p className='text-center'>Conheça nossos serviços</p>
+                <h2 className='text-center mt-5 mb-5'>Conheça os personagens</h2>
 
                 <div
                     className='d-flex justify-content-around'
@@ -53,10 +48,36 @@ export const Home = () => {
                     }
 
                     </div>
+                    <div className='d-flex justify-content-between'>
+                        <button
+                            className='btn btn-primary'
+                            onClick={() => {
+                                setPage(prevPage)
+                                window.scrollTo({top: 0, behavior: 'smooth'})
+                            }}
+                            style={{
+                                background: '#0AB0C7',
+                                border: '1px solid #0AB0C7',
+                                
+                            }}
+                        > 
+                            Anterior
+                        </button>
+                        <button
+                            className='btn btn-primary'
+                            onClick={() => {
+                                setPage(nextPage)
+                                window.scrollTo({top: 0, behavior: 'smooth'})
+                            }}
+                            style={{
+                                background: '#0AB0C7',
+                                border: '1px solid #0AB0C7'
+                            }}
+                        > 
+                            Próxima
+                        </button>
+                    </div>
                 </div>
-
-                    
-
 
                 </div>
 

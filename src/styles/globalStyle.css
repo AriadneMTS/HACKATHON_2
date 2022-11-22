@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "GetSchwifty";   /*Can be any text*/
+  src: url("../fontes/get_schwifty.ttf") format("truetype");
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
