@@ -1,4 +1,3 @@
-import { Menu } from "../../components/Menu"
 import { Footer } from "../../components/Footer"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
