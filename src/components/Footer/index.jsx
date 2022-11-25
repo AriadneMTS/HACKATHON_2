@@ -15,7 +15,7 @@ export const Footer = () => {
                     style={{
                         color:"#fff"
                     }}
-                >Desenvolvido por seu nome:D - {new Date().getFullYear()}</p>
+                >Desenvolvido por J. Felippe & Ariadne - {new Date().getFullYear()}</p>
 
                 <div
                     className="d-flex justify-content-center"

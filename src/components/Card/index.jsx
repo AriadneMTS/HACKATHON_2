@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export const Card = ({ personagem }) => {
 
     return (
-        <div className="col-3 mb-5">
+        <div className="col-4 mb-5">
             <div
                 className='card text-start h-100'
                 key={personagem.index}
