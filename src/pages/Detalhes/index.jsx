@@ -24,7 +24,7 @@ export const Detalhes = () => {
         <>
             <Header />
             <div
-                className="container mt-1"
+                className="container mt-1 mb-4"
             >
                 <div
                     style={{
@@ -62,12 +62,6 @@ export const Detalhes = () => {
                     </div>
                     
                 </div>
-                <hr />
-
-                
-
-
-
             </div>
 
             <Footer />

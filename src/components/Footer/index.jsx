@@ -8,6 +8,7 @@ export const Footer = () => {
                     backgroundColor: '#383838',
                     paddingBottom: 15,
                     paddingTop: 15,
+                    bottom: 0,
                 }}
             >
                 <p
